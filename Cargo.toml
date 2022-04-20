@@ -8,4 +8,10 @@ crate-type = ["cdylib"]
 name = "hash"
 
 [dependencies]
-# java-utils="0.1.*"
+jni = "0.19"
+
+[profile.release]
+panic = "abort"
+opt-level = 3
+lto = true
+codegen-units = 1

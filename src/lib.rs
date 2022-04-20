@@ -1,4 +1,7 @@
-use std::os::raw::{c_long, c_int};
+use jni::objects::JClass;
+use jni::sys::{jint, jlong};
+use jni::JNIEnv;
+use std::os::raw::{c_int, c_long};
 
 struct LinearCongruentialGenerator {
     state: i64,
@@ -25,4 +28,14 @@ pub extern "C" fn consistent_hash(input: c_long, buckets: c_int) -> c_int {
             return candidate;
         }
     }
+}
+
+#[no_mangle]
+pub extern "C" fn Java_cc_binarii_hashing_Boot_consistentHash(
+    _env: JNIEnv,
+    _class: JClass,
+    input: jlong,
+    buckets: jint,
+) -> jint {
+    consistent_hash(input, buckets)
 }
