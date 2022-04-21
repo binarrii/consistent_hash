@@ -31,7 +31,7 @@ pub extern "C" fn consistent_hash(input: c_long, buckets: c_int) -> c_int {
 }
 
 #[no_mangle]
-pub extern "C" fn Java_cc_binarii_hashing_Boot_consistentHash(
+pub extern "C" fn Java_cc_binarii_hashing_Boot_00024LibHashJNI_consistentHash(
     _env: JNIEnv,
     _class: JClass,
     input: jlong,
