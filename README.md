@@ -1,1 +1,3 @@
-### Rust porting of guava consistent hash !
+# consistent_hash
+
+Rust porting of guava consistent hash !
